@@ -1,0 +1,68 @@
+version: "3.8"
+
+services:
+    backend:
+        container_name: cpj-backend
+        image: python:3.9
+        restart: unless-stopped
+        command: sh -c "cd /app && pip install -r requirements.txt && pip install uvicorn && uvicorn main:app --host 0.0.0.0 --port 8000"
+        ports:
+            - 8000:8000
+        volumes:
+            - ./backend:/app      
+        env_file: 
+            - ./backend/.env
+        environment:
+            - TZ=Asia/Taipei
+        networks:
+            - cpj
+
+    postgres:
+        image: postgres:latest
+        container_name: cpj-db
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_PASSWORD=cpj_demo
+        volumes: 
+            - db_data:/var/lib/postgres/db_data
+            - ./database/:/docker-entrypoint-initdb.d
+        networks:
+            - cpj
+
+    judgecore:
+        build:
+            context: ./judgecore
+        container_name: cpj-judgecore
+        restart: unless-stopped
+        command: sh -c "cd /app/hack1 && yarn && cd .. && python -u main.py"
+        ports:
+            - 3000:3000
+        env_file: 
+            - ./judgecore/.env
+        networks:
+            - cpj
+
+    minio:
+        image: quay.io/minio/minio:latest
+        container_name: cpj-minio
+        ports:
+            - 8080:8080
+            - 8081:8081
+        volumes:
+            - ~/minio/data:/data
+        restart: unless-stopped
+        environment:
+            MINIO_ROOT_USER: cpj_demo
+            MINIO_ROOT_PASSWORD: cpj_demo
+        command: server /data --address ":8080" --console-address ":8081"
+        networks:
+            - cpj
+
+volumes: 
+    db_data:
+
+networks:
+  cpj:
+    external:
+      name: cpj

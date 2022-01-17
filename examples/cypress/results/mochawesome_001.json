@@ -1,0 +1,155 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 0,
+    "pending": 0,
+    "failures": 3,
+    "start": "2021-11-25T06:28:04.097Z",
+    "end": "2021-11-25T06:28:22.849Z",
+    "duration": 18752,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a2868257-5eb9-405b-999a-5fb52025308a",
+      "title": "",
+      "fullFile": "cypress\\integration\\TodoTests\\Todo5_Modal.js",
+      "file": "cypress\\integration\\TodoTests\\Todo5_Modal.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3b5d864a-9f83-4317-9de2-0dfcb7d3eef7",
+          "title": "Todo5: Modal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Correct HTML relationship",
+              "fullTitle": "Todo5: Modal Correct HTML relationship",
+              "timedOut": null,
+              "duration": 7217,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//container exists\ncy.visit('/');\ncy.get('button').contains('Start Game').click();\ncy.get('[id=\"6-6\"]').click();\ncy.wait(2000);\ncy.get('.boardWrapper > .modal:nth-child(1)').should('have.css', 'opacity', '1');\ncy.get('.modal > .modalWrapper:nth-child(1)');\ncy.get('.modal > .modalWrapper:nth-child(3)');\ncy.get('.modal > .modalContent:nth-child(2)');\ncy.get('.modalContent:nth-child(2) > div:nth-child(1)').should('have.class', 'modalResult');\ncy.get('.modalContent:nth-child(2) > div:nth-child(2)').should('have.class', 'modalBtnWrapper');\ncy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(1)').should('have.class', 'modalBtn');\ncy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(2)').should('have.class', 'modalBtn');",
+              "err": {
+                "message": "CypressError: Timed out retrying: `cy.click()` failed because this element:\n\n`<div class=\"cell\" id=\"6-6\" style=\"background: rgb(221, 221, 221); border: 2px outset white;\"></div>`\n\nis being covered by another element:\n\n`<div class=\"modalWrapper\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying: `cy.click()` failed because this element:\n\n`<div class=\"cell\" id=\"6-6\" style=\"background: rgb(221, 221, 221); border: 2px outset white;\"></div>`\n\nis being covered by another element:\n\n`<div class=\"modalWrapper\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (http://localhost:3000/__cypress/runner/cypress_runner.js:160376:26)\n    at ensureDescendents (http://localhost:3000/__cypress/runner/cypress_runner.js:149064:8)\n    at ensureDescendentsAndScroll (http://localhost:3000/__cypress/runner/cypress_runner.js:149071:14)\n    at ensureElIsNotCovered (http://localhost:3000/__cypress/runner/cypress_runner.js:149200:5)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:149337:52)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:149352:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:9956:23)\n    at Function.Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:7230:29)\n    at tryFn (http://localhost:3000/__cypress/runner/cypress_runner.js:163481:24)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:163522:12)\n    at http://localhost:3000/__cypress/runner/cypress_runner.js:163040:16\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:9956:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:7891:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:7948:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:7993:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:8073:18)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\TodoTests\\Todo5_Modal.js:75:26)",
+                "diff": null
+              },
+              "uuid": "287a2a6b-a732-478b-9c38-daf856e383a8",
+              "parentUUID": "3b5d864a-9f83-4317-9de2-0dfcb7d3eef7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Show the difference between Win and Lost (3%)",
+              "fullTitle": "Todo5: Modal Show the difference between Win and Lost (3%)",
+              "timedOut": null,
+              "duration": 6218,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//container exists\ncy.get('.modalContent:nth-child(2) > div:nth-child(1)').should('have.class', 'modalResult').contains('Game Over');\ncy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(1)').should('have.class', 'modalBtn').contains('Try Again');\ncy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(2)').should('have.class', 'modalBtn').contains('Back to Home');\ncy.reload();\ncy.visit('/');\ncy.get('button').contains('Start Game').click();\ncy.get('.boardContainer > div').each(function ($el, index) {\n  if (index > 0) {\n    cy.wrap($el).children().each(function ($cell, colIdx) {\n      var stringId = (index - 1).toString() + '-' + colIdx.toString();\n      var value = board[stringId];\n      if (index >= 1) {\n        if (value !== '💣') {\n          cy.wrap($cell).click();\n          if (value == '') cy.wrap($cell).should('have.value', value);else cy.wrap($cell).contains(value);\n        }\n      }\n    });\n  }\n});\ncy.wait(2000);\ncy.get('.modalContent:nth-child(2) > div:nth-child(1)').should('have.class', 'modalResult').contains('WIN');\ncy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(1)').should('have.class', 'modalBtn').contains('New Game');\ncy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(2)').should('have.class', 'modalBtn').contains('Back to Home');",
+              "err": {
+                "message": "CypressError: Timed out retrying: `cy.click()` failed because this element:\n\n`<div class=\"cell\" id=\"0-0\" style=\"background: rgb(221, 221, 221); border: 2px outset white;\"></div>`\n\nis being covered by another element:\n\n`<div class=\"modalWrapper\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying: `cy.click()` failed because this element:\n\n`<div class=\"cell\" id=\"0-0\" style=\"background: rgb(221, 221, 221); border: 2px outset white;\"></div>`\n\nis being covered by another element:\n\n`<div class=\"modalWrapper\"></div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureDescendents (http://localhost:3000/__cypress/runner/cypress_runner.js:160376:26)\n    at ensureDescendents (http://localhost:3000/__cypress/runner/cypress_runner.js:149064:8)\n    at ensureDescendentsAndScroll (http://localhost:3000/__cypress/runner/cypress_runner.js:149071:14)\n    at ensureElIsNotCovered (http://localhost:3000/__cypress/runner/cypress_runner.js:149200:5)\n    at runAllChecks (http://localhost:3000/__cypress/runner/cypress_runner.js:149337:52)\n    at retryActionability (http://localhost:3000/__cypress/runner/cypress_runner.js:149352:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:9956:23)\n    at Function.Promise.attempt.Promise.try (http://localhost:3000/__cypress/runner/cypress_runner.js:7230:29)\n    at tryFn (http://localhost:3000/__cypress/runner/cypress_runner.js:163481:24)\n    at whenStable (http://localhost:3000/__cypress/runner/cypress_runner.js:163522:12)\n    at http://localhost:3000/__cypress/runner/cypress_runner.js:163040:16\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:9956:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:7891:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:7948:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:7993:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:8073:18)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\TodoTests\\Todo5_Modal.js:102:30)",
+                "diff": null
+              },
+              "uuid": "fbab4db8-c0d8-4af2-954e-1ace53b65f41",
+              "parentUUID": "3b5d864a-9f83-4317-9de2-0dfcb7d3eef7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Restart Game and Back to Home",
+              "fullTitle": "Todo5: Modal Restart Game and Back to Home",
+              "timedOut": null,
+              "duration": 5101,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(1)').should('have.class', 'modalBtn').contains('New Game').click();\ncy.get('.mineSweeper > div:nth-child(1)').should('have.class', 'boardPage');\ncy.get('.boardPage > div:nth-child(1)').should('have.class', 'boardWrapper');\ncy.get('.boardWrapper > div:nth-child(1)').should('have.class', 'boardContainer');\ncy.get('.boardContainer > div:nth-child(1)').should('have.class', 'dashBoard');\ncy.get('.boardContainer').children().should('have.length', 9);\ncy.get('[id=\"2-1\"]').click();\ncy.get('.modalBtnWrapper:nth-child(2) > div:nth-child(2)').should('have.class', 'modalBtn').contains('Back to Home').click();\ncy.get('.HomeWrapper');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find content: 'New Game' within the element: <div.modalBtn> but never did.",
+                "estack": "AssertionError: Timed out retrying: Expected to find content: 'New Game' within the element: <div.modalBtn> but never did.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress\\integration\\TodoTests\\Todo5_Modal.js:115:97)",
+                "diff": null
+              },
+              "uuid": "e94827c2-0583-4cc7-ad62-0b316769b432",
+              "parentUUID": "3b5d864a-9f83-4317-9de2-0dfcb7d3eef7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "287a2a6b-a732-478b-9c38-daf856e383a8",
+            "fbab4db8-c0d8-4af2-954e-1ace53b65f41",
+            "e94827c2-0583-4cc7-ad62-0b316769b432"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18536,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

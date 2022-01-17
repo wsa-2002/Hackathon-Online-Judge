@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-25T06:24:00.630Z",
+    "end": "2021-11-25T06:24:05.736Z",
+    "duration": 5106,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0d674834-5ca8-4e45-99f2-1a3c06ad00fe",
+      "title": "",
+      "fullFile": "cypress\\integration\\TodoTests\\Todo1_HomePageStartHTML.js",
+      "file": "cypress\\integration\\TodoTests\\Todo1_HomePageStartHTML.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0428ee67-2607-4af2-9206-6f7bf953b5ba",
+          "title": "Todo1: HomePage Start HTML",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "HomeWrapper, title and start button exists exist",
+              "fullTitle": "Todo1: HomePage Start HTML HomeWrapper, title and start button exists exist",
+              "timedOut": null,
+              "duration": 2605,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('div').should('have.class', 'mineSweeper');\ncy.get('div').should('have.class', 'HomeWrapper');\ncy.get('p').should('have.class', 'title').contains('MineSweeper');\ncy.get('button').should('have.class', 'btn').contains('Start Game');",
+              "err": {},
+              "uuid": "c93b5dcf-8a03-4b5d-a9eb-5eb70f266720",
+              "parentUUID": "0428ee67-2607-4af2-9206-6f7bf953b5ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Correct Relationship",
+              "fullTitle": "Todo1: HomePage Start HTML Correct Relationship",
+              "timedOut": null,
+              "duration": 936,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('div[class=\"mineSweeper\"]').find('div:last-child') // use find here to restrict search to previous subject\n.should('have.class', 'HomeWrapper');\ncy.get('div[class=\"HomeWrapper\"]').children().should('have.class', 'title');",
+              "err": {},
+              "uuid": "ea2b1c07-089b-4099-97f2-24019ef3e525",
+              "parentUUID": "0428ee67-2607-4af2-9206-6f7bf953b5ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "tartGameOnClick hook function and switching from Home to Board  (5%)",
+              "fullTitle": "Todo1: HomePage Start HTML tartGameOnClick hook function and switching from Home to Board  (5%)",
+              "timedOut": null,
+              "duration": 1316,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('button').contains('Start Game').click();\ncy.get('div').should('have.class', 'boardWrapper');",
+              "err": {},
+              "uuid": "0a676867-b0f9-486f-abe0-cdeff6526d8b",
+              "parentUUID": "0428ee67-2607-4af2-9206-6f7bf953b5ba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c93b5dcf-8a03-4b5d-a9eb-5eb70f266720",
+            "ea2b1c07-089b-4099-97f2-24019ef3e525",
+            "0a676867-b0f9-486f-abe0-cdeff6526d8b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4857,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
