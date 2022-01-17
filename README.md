@@ -1,6 +1,6 @@
 ## Hackthon Online Judge
 ### Web Programming 110-1 Final Project
-by daphne, jtc, wsa
+by [daphne](https://github.com/daphneeeee), [jtc](https://github.com/jtongchenzip), [wsa](https://github.com/wsa-2002)
 
 ### About this project
 This project can judge your hackathon result with cypress online. It also gives you a friendly designed page to see your judged results. 
